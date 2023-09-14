@@ -2,13 +2,12 @@
 
 class DNA
 {
-    public static function findRepeatedDnaSequences($s) : array
+    public static function findRepeatedDnaSequences($s): array
     {
         $result = [];
 
         $lookup = [];
-        if(strlen($s) < 10)
-        {
+        if (strlen($s) < 10) {
             return $result;
         }
         for ($i = 0; $i < strlen($s) - 10; $i++) {
@@ -18,13 +17,11 @@ class DNA
                 if ($lookup[$new_substring] == 1) {
                     array_push($result, $new_substring);
                 }
-
                 $lookup[$new_substring]++;
             } else {
                 $lookup[$new_substring] = 1;
             }
         }
-
         return $result;
     }
 }
